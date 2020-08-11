@@ -55,6 +55,7 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 | address         | string     | null: false                    |
 | house_number    | string     | null: false                    |
 | building_name   | string     |                                |
+| trade           | references | null: false, foreign_key: true |
 
 ### Association
 
