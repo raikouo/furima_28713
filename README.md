@@ -17,9 +17,7 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 | birth_day       | date       | null: false                    |
 
 ### Association
-
 - has_many :items
-- has_many :orders
 - has_many :trades
 
 ## items テーブル
@@ -60,7 +58,7 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 
 ### Association
 
-- has_one :trades
+- belongs_to :trades
 - belongs_to_active_hash :prefecture
 
 ## trades テーブル
@@ -69,13 +67,11 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 | --------------- | ---------- | ------------------------------ |
 | user            | references | null: false, foreign_key: true |
 | item            | references | null: false, foreign_key: true |
-| order           | references | null: false, foreign_key: true |
 
 ### Association
-
+- has_many :orders
 - belongs_to :users
 - belongs_to :items
-- belongs_to :orders
 
 
 This README would normally document whatever steps are necessary to get the
