@@ -28,11 +28,11 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 | explain          | text       | null: false                    |
 | price            | integer    | null: false                    |
 | image            | string     | null: false                    |
-| status_id        | integer    | null: false, foreign_key: true |
-| postage_id       | integer    | null: false, foreign_key: true |
-| shipping_date_id | integer    | null: false, foreign_key: true |
-| prefecture_id    | integer    | null: false, foreign_key: true |
-| category_id      | integer    | null: false, foreign_key: true |
+| status_id        | integer    | null: false                    |
+| postage_id       | integer    | null: false                    |
+| shipping_date_id | integer    | null: false                    |
+| prefecture_id    | integer    | null: false                    |
+| category_id      | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
 ### Association
@@ -50,7 +50,7 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 | --------------- | ---------- | ------------------------------ |
 | tel             | string     | null: false                    |
 | postal_code     | string     | null: false                    |
-| prefecture_id   | integer    | null: false, foreign_key: true |
+| prefecture_id   | integer    | null: false                    |
 | city            | string     | null: false                    |
 | address         | string     | null: false                    |
 | house_number    | string     | null: false                    |
