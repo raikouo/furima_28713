@@ -30,16 +30,15 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 | explain          | text       | null: false                    |
 | price            | integer    | null: false                    |
 | image            | text       | null: false                    |
-| status_id        | string     | null: false                    |
-| postage_id       | string     | null: false                    |
-| shipping_date_id | string     | null: false                    |
+| status_id        | integer    | null: false                    |
+| postage_id       | integer    | null: false                    |
+| shipping_date_id | integer    | null: false                    |
 | prefecture_id    | integer    | null: false                    |
 | categories_id    | integer    | null: false                    |
 | user             | references | null: false                    |
 
 ### Association
 
-- has_one :orders
 - has_one :trades
 - belongs_to :users
 - belongs_to_active_hash :status
@@ -58,14 +57,10 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 | address         | string     | null: false                    |
 | house_number    | string     | null: false                    |
 | building_name   | string     |                                |
-| user            | references | null: false, foreign_key: true |
-| item            | references | null: false, foreign_key: true |
 
 ### Association
 
 - has_one :trades
-- belongs_to :items
-- belongs_to :users
 - belongs_to_active_hash :prefecture
 
 ## trades テーブル
