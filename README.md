@@ -27,22 +27,22 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 | name             | string     | null: false                    |
 | explain          | text       | null: false                    |
 | price            | integer    | null: false                    |
-| image            | text       | null: false                    |
-| status_id        | integer    | null: false                    |
-| postage_id       | integer    | null: false                    |
-| shipping_date_id | integer    | null: false                    |
-| prefecture_id    | integer    | null: false                    |
-| categories_id    | integer    | null: false                    |
-| user             | references | null: false                    |
+| image            | string     | null: false                    |
+| status_id        | integer    | null: false, foreign_key: true |
+| postage_id       | integer    | null: false, foreign_key: true |
+| shipping_date_id | integer    | null: false, foreign_key: true |
+| prefecture_id    | integer    | null: false, foreign_key: true |
+| category_id      | integer    | null: false, foreign_key: true |
+| user             | references | null: false, foreign_key: true |
 
 ### Association
 
-- has_one :trades
-- belongs_to :users
+- has_one :trade
+- belongs_to :user
 - belongs_to_active_hash :status
 - belongs_to_active_hash :shipping_date
 - belongs_to_active_hash :prefecture
-- belongs_to_active_hash :categories
+- belongs_to_active_hash :category
 
 ## orders テーブル
 
@@ -50,7 +50,7 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 | --------------- | ---------- | ------------------------------ |
 | tel             | string     | null: false                    |
 | postal_code     | string     | null: false                    |
-| prefecture_id   | integer    | null: false                    |
+| prefecture_id   | integer    | null: false, foreign_key: true |
 | city            | string     | null: false                    |
 | address         | string     | null: false                    |
 | house_number    | string     | null: false                    |
@@ -58,7 +58,7 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 
 ### Association
 
-- belongs_to :trades
+- belongs_to :trade
 - belongs_to_active_hash :prefecture
 
 ## trades テーブル
@@ -69,9 +69,9 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 | item            | references | null: false, foreign_key: true |
 
 ### Association
-- has_many :orders
-- belongs_to :users
-- belongs_to :items
+- has_one :order
+- belongs_to :user
+- belongs_to :item
 
 
 This README would normally document whatever steps are necessary to get the
