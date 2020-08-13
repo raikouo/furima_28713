@@ -9,8 +9,7 @@ class User < ApplicationRecord
   USER_NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
   
   with_options presence: true do
-    validates :nickname
-    validates :email
+    validates :nickname, uniqueness: { case_sensitive: true }
     validates :password, format: { with: PASSWORD_REGEX, message: '半角英数字6文字以上で入力してください' }
     validates :birth_day
   end
