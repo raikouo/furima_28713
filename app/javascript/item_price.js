@@ -4,7 +4,7 @@ window.addEventListener("turbolinks:load", () => {
   const profit = document.getElementById("profit");
   price.addEventListener("input", () => {
     const priceInput = document.getElementById("item-price").value;
-    addTaxPrice.innerHTML = priceInput * 0.1;
-    profit.innerHTML = priceInput * 0.9;
+    addTaxPrice.innerHTML = Math.floor(priceInput * 0.1);
+    profit.innerHTML = Math.floor(priceInput * 0.9);
   })
 });
