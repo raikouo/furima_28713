@@ -1,11 +1,10 @@
-window.addEventListener("DOMContentLoaded", () => {
-  let price = document.getElementById("item-price");
+window.addEventListener("turbolinks:load", () => {
+  const price = document.getElementById("item-price");
+  const addTaxPrice = document.getElementById("add-tax-price");
+  const profit = document.getElementById("profit");
   price.addEventListener("input", () => {
-    let priceInput = document.getElementById("item-price").value
-    const tax = 0.1;
-    let fee_price = priceInput * tax;
-    let profit = priceInput - fee_price;
-    document.getElementById("add-tax-price").innerHTML = fee_price;
-    document.getElementById("profit").innerHTML = profit;
+    const priceInput = document.getElementById("item-price").value;
+    addTaxPrice.innerHTML = priceInput * 0.1;
+    profit.innerHTML = priceInput * 0.9;
   })
 });
