@@ -27,7 +27,6 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 | name             | string     | null: false                    |
 | explain          | text       | null: false                    |
 | price            | integer    | null: false                    |
-| image            | string     | null: false                    |
 | status_id        | integer    | null: false                    |
 | postage_id       | integer    | null: false                    |
 | shipping_date_id | integer    | null: false                    |
@@ -43,6 +42,7 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 - belongs_to_active_hash :shipping_date
 - belongs_to_active_hash :prefecture
 - belongs_to_active_hash :category
+- has_one_attached :image
 
 ## orders テーブル
 
