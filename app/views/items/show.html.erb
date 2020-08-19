@@ -24,13 +24,13 @@
         <%= @item.postage.name %>
       </span>
     </div>
-<%# ログイン者に表示 %>
+    <%# ログイン者に表示 %>
     <% if user_signed_in? %>
       <%# 出品者に表示 %>
       <% if current_user == @item.user %>
         <%= link_to '商品の編集', "#", method: :get, class: "item-red-btn" %>
         <p class='or-text'>or</p>
-        <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
+        <%= link_to '削除', item_path, method: :delete, class:'item-destroy' %>
       <%# /出品者に表示 %>
       <% elsif @item.user != nil %>
         <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
