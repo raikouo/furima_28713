@@ -6,11 +6,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
-  
+
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   USER_NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/.freeze
   USER_NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
-  
+
   with_options presence: true do
     validates :nickname, uniqueness: { case_sensitive: true }
     validates :password, format: { with: PASSWORD_REGEX, message: '半角英数字6文字以上で入力してください' }
@@ -21,10 +21,9 @@ class User < ApplicationRecord
     validates :first_name
     validates :last_name
   end
-  
+
   with_options presence: true, format: { with: USER_NAME_KANA_REGEX, message: '全角カナを使用してください' } do
     validates :first_name_kana
     validates :last_name_kana
   end
-
 end

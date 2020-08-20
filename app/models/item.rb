@@ -11,11 +11,11 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name, length: { maximum: 40 }
     validates :explain, length: { maximum: 1000 }
-    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
     validates :image
   end
-  
-  with_options numericality: { other_than: 1 }  do
+
+  with_options numericality: { other_than: 1 } do
     validates :status_id
     validates :postage_id
     validates :shipping_date_id
