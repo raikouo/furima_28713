@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :trade_order do
     token { 'tok_df74c51dc61553b2893225a8e2ed' }
-    tel {'08012345678'}
+    tel { '08012345678' }
     postal_code { '163-8001' }
     prefecture_id { 2 }
     city { '東京都' }

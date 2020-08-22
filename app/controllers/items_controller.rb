@@ -53,9 +53,6 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    if @item.trade != nil
-      redirect_to root_path
-    end
+    redirect_to root_path unless @item.trade.nil?
   end
-  
 end
