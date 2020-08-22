@@ -9,7 +9,7 @@
     <div class='item-img-content'>
       <%= image_tag @item.image ,class:"item-box-img" %>
       <%# sold out %>
-      <% if @item.user_id == nil %>
+      <% if @item.trade != nil %>
         <div class='sold-out'>
           <span>Sold Out!!</span>
         </div>
@@ -25,14 +25,14 @@
       </span>
     </div>
     <%# ログイン者に表示 %>
-    <% if user_signed_in? %>
+    <% if user_signed_in? && @item.trade == nil %>
       <%# 出品者に表示 %>
       <% if current_user == @item.user %>
         <%= link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
         <p class='or-text'>or</p>
         <%= link_to '削除', item_path, method: :delete, class:'item-destroy' %>
       <%# /出品者に表示 %>
-      <% elsif @item.user != nil %>
+      <% else %>
         <%= link_to '購入画面に進む', item_transactions_path(@item.id) ,class:"item-red-btn"%>
       <% end %>
     <% end %>

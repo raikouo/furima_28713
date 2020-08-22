@@ -4,12 +4,11 @@ class TransactionsController < ApplicationController
   before_action :move_to_index
 
   def index
-
+    @order = Order.new
   end
 
   def create
     @order = TradeOrder.new(order_params)
-    binding.pry
     if @order.valid?
       pay_item
       @order.save
@@ -39,7 +38,7 @@ class TransactionsController < ApplicationController
   end
 
   def move_to_index
-    if current_user.id == @item.user_id
+    if current_user.id == @item.user_id || @item.trade != nil
       redirect_to root_path
     end
   end
