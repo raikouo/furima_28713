@@ -39,6 +39,7 @@ https://app.lucidchart.com/documents/view/c8def7d8-f801-412f-b489-181692d3d06a
 - has_one :trade
 - belongs_to :user
 - belongs_to_active_hash :status
+- belongs_to_active_hash :postage
 - belongs_to_active_hash :shipping_date
 - belongs_to_active_hash :prefecture
 - belongs_to_active_hash :category
