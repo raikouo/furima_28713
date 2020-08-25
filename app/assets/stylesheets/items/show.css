@@ -172,6 +172,7 @@
   font-size: 18px;
   border-radius: 100px;
   margin-bottom: 2vh;
+  cursor: pointer;
 }
 
 .comment-flag {
@@ -203,4 +204,20 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;
+}
+/* 追加分 */
+.comments {
+  word-break: break-all; 
+  padding:5px 10px;
+  text-align:left;
+  height:150px;
+  overflow:hidden auto;
+  border:1px solid #dedede;
+}
+
+.comment_time {
+  border-bottom:1px dashed #dedede;
+  color:#999;
+  text-align:right;
+  font-size:8px;
 }
