@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :trades
-
+  has_many :comments
+  
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   USER_NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/.freeze
   USER_NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
