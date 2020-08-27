@@ -30,7 +30,7 @@
  }
 
  .breadcrumbs a{
-  color: rgb(100, 149, 237, 1);
+  color: rgba(100, 149, 237, 1);
  }
  .breadcrumbs a:hover{
   color: rgba(60, 202, 206, 1);
