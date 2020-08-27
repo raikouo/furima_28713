@@ -11,6 +11,11 @@
 </head>
 
 <body>
+<% unless request.path_info == root_path %>
+  <div class ="bread">
+    <%= breadcrumbs separator: " &rsaquo; ", class: "breadcrumbs" %>
+  </div>
+<% end %>
   <%= yield %>
 </body>
 

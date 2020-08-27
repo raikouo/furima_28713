@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+ .bread {
+   height: 30px;
+   width: 100%;
+   background-color: rgba(248, 248, 248, 0.8);
+   box-shadow: 0 10px 15px -10px rgba(100, 149, 237, 0.3);
+   position: fixed;
+   z-index: 10;
+ }
+
+ .breadcrumbs {
+   padding: 0 20px;
+   font-size: 14px;
+   line-height: 30px;
+ }
+
+ .breadcrumbs a{
+  color: rgb(100, 149, 237);
+ }
