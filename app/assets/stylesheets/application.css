@@ -21,7 +21,11 @@
    position: fixed;
    left:3%;
    z-index: 10;
+   transition: 0.5s;
  }
+.bread:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
 
  .breadcrumbs {
    padding: 0 20px;
@@ -30,8 +34,10 @@
  }
 
  .breadcrumbs a{
-  color: rgb(100, 149, 237, 1);
+  color: rgba(100, 149, 237, 1);
+  transition: 0.5s;
  }
+
  .breadcrumbs a:hover{
   color: rgba(60, 202, 206, 1);
  }
