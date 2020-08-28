@@ -17,7 +17,7 @@ class Item < ApplicationRecord
     validates :image
   end
 
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { other_than: 1, message: 'を選択して下さい' } do
     validates :status_id
     validates :postage_id
     validates :shipping_date_id
