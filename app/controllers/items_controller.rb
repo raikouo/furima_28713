@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy, :edit, :update]
   before_action :move_to_index, only: [:destroy, :edit, :update]
   before_action :search_item, only: [:index, :show, :search]
-  
+
   def index
     @items = Item.all.order(id: 'DESC')
   end

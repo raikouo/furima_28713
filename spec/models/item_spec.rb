@@ -14,19 +14,19 @@ RSpec.describe Item, type: :model do
     it 'imageがないと登録できないこと' do
       @item.image = nil
       @item.valid?
-      expect(@item.errors.full_messages).to include("出品画像を入力してください")
+      expect(@item.errors.full_messages).to include('出品画像を入力してください')
     end
 
     it '商品名がないと登録できないこと' do
       @item.name = nil
       @item.valid?
-      expect(@item.errors.full_messages).to include("商品名を入力してください")
+      expect(@item.errors.full_messages).to include('商品名を入力してください')
     end
 
     it '商品の説明がないと登録できないこと' do
       @item.explain = nil
       @item.valid?
-      expect(@item.errors.full_messages).to include("商品の説明を入力してください")
+      expect(@item.errors.full_messages).to include('商品の説明を入力してください')
     end
 
     it 'カテゴリーの選択がないと登録できないこと' do
@@ -62,7 +62,7 @@ RSpec.describe Item, type: :model do
     it '価格の入力がないと登録できないこと' do
       @item.price = nil
       @item.valid?
-      expect(@item.errors.full_messages).to include("価格を入力してください")
+      expect(@item.errors.full_messages).to include('価格を入力してください')
     end
 
     it '商品名が41字以上だと登録できないこと' do
