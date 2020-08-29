@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_item, only: [:show, :destroy, :edit, :update]
   before_action :move_to_index, only: [:destroy, :edit, :update]
+  before_action :search_item, only: [:index, :show, :search]
 
   def index
     @items = Item.all.order(id: 'DESC')
@@ -44,6 +45,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @results = @p.result.order(id: 'DESC')
+    @items = Item.all
+    set_search
+  end
+
   private
 
   def item_params
@@ -52,6 +59,18 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def search_item
+    @p = Item.ransack(params[:q])
+  end
+
+  def set_search
+    @category = Category.where.not(id: 1)
+    @status = Status.where.not(id: 1)
+    @postage = Postage.where.not(id: 1)
+    @prefecture = Prefecture.where.not(id: 1)
+    @shipping_date = ShippingDate.where.not(id: 1)
   end
 
   def move_to_index

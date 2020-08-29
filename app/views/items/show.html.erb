@@ -94,7 +94,10 @@
         不快な言葉遣いなどは利用制限や退会処分となることがあります。
       </p>
       <% if user_signed_in? %>
-        <%= f.submit "コメントする" ,class: "comment-btn" %>
+        <%= button_tag type: :submit, class: "comment-btn" do %>
+          <%= image_tag "comment.png", class:"comment-flag-icon", width:"20", height:"25" %>
+          <span>コメントする</span>
+        <% end %>  
       <% end %>
     <% end %>
     <div id= 'comments' class= 'comments'>
@@ -107,14 +110,8 @@
         <% end %>
       <% end %>
     </div>
-      <%# /comment%>
-      <!--
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-      -->
   </div>
+  <%# /comment%>
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品

@@ -18,7 +18,12 @@ crumb :item_new do
 end
 
 crumb :item_show do |item|
-  link "#{item.id}: #{item.name}", item_path(item)
+  link "#{item.id}：#{item.name}", item_path(item)
+  parent :root
+end
+
+crumb :search do |result|
+  link "商品検索：#{result.count} 件", search_items_path
   parent :root
 end
 
