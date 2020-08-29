@@ -1,6 +1,26 @@
-/* 商品一覧 */
+.wrapper{
+  display: flex;
+}
+
+.side-search{
+  width: 250px;
+  background-color: #f5f5f5;
+}
+.side-search-header{
+  width:100px;
+  height: 30px;
+  font-size:14px;
+  line-height: 30px;
+  background-color: #fff;
+  border-radius: 20px;
+  border:1px dashed #c77812;
+  text-align:center;
+  margin:5px 75px;
+}
+
 .label {
   font-size:14px;
+  margin-left:25px;
 }
 .field {
   width: 200px;
@@ -9,7 +29,7 @@
   border:1px dashed #c77812;
   border-radius: 5px;
   padding-left: 5px;
-  margin:2px;
+  margin:2px 25px;
 }
 
 .price-field {
@@ -19,10 +39,28 @@
   border:1px dashed #c77812;
   border-radius: 5px;
   padding-left: 5px;
-  margin:2px;
+  margin:2px 5px 2px 25px;
+}
+.submit-btn{
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: #3ccace;
+  border:1px solid #3ccace;
+  color:#fff;
+  margin:5px 25px;
+  box-shadow: 0px 3px #cccccc;
+}
+.submit-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
 }
 
-.item-contents {
+/* 商品一覧 */
+.search_item-contents {
+  width: calc(100% - 250px);
   background-color: #FFF;
   display: flex;
   flex-direction: column;
@@ -30,21 +68,21 @@
   padding: 5vh 0;
 }
 
-.item-contents>.title {
+.search_item-contents>.title {
   font-size: 3vh;
   line-height: 1.4;
   color: #3ccace;
   font-weight: bold;
 }
 
-.item-lists {
-  width: 100vw;
+.search_item-lists {
+  width: calc(100vw - 250px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.item-lists>.list {
+.search_item-lists>.list {
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
