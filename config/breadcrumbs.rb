@@ -1,3 +1,5 @@
+#修正必要
+
 crumb :root do
   link "FURIMA", root_path
 end
@@ -24,6 +26,11 @@ end
 
 crumb :search do |result|
   link "商品検索：#{result.count} 件", search_items_path
+  parent :root
+end
+
+crumb :mypage do |user|
+  link "マイページ：#{user.nickname}さん",user_path(user)
   parent :root
 end
 

@@ -15,10 +15,12 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname, uniqueness: { case_sensitive: true }
-    validates :password, format: { with: PASSWORD_REGEX, message: '半角英数字6文字以上で入力してください' }
     validates :birth_day
   end
-
+  
+  validates :password, format: { with: PASSWORD_REGEX, message: '半角英数字6文字以上で入力してください' },
+  if: -> { changes['encrypted_password'] }, allow_blank: true
+  
   with_options presence: true, format: { with: USER_NAME_REGEX, message: '全角文字を使用してください' } do
     validates :first_name
     validates :last_name
