@@ -28,7 +28,28 @@
       <br><br>
       <%= f.submit "変更する", class: 'submit-btn' %>
     <% end %>
+    <% if defined? @card %>
+      <div class="Card__title">
+        <h2>カード情報<h2>
+      </div>
+      <div class="Card_info">
+        【カード番号】
+        <br>
+        <%= "**** **** **** " + @card[:last4] %>
+        <%# カード番号の下4桁を取得 %>
+
+        <br>
+        【有効期限】
+        <br>
+        <%= @card[:exp_month] %>
+        <%# 有効期限の「月」を取得 %>
+        /
+        <%= @card[:exp_year] %>
+        <%# 有効期限の「年」を取得 %>
+      </div>
+    <% end %>
   </div>
+
   <div class='search_item-contents'>
     <h2 class='title'>出品：<%= @results.length %> 件</h2>
     <ul class='search_item-lists'>

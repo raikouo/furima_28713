@@ -1,4 +1,4 @@
-if (document.URL.match( /transactions/ )) {
+if (document.URL.match( /transactions/ ) || document.URL.match( /cards\/new/ ) ) {
   const pay = () => {
     Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
     const form = document.getElementById("charge-form");
@@ -19,7 +19,7 @@ if (document.URL.match( /transactions/ )) {
         if (status === 200) {
           const token = response.id;
           const renderDom = document.getElementById("charge-form");
-          const tokenObj = `<input value=${token} type="hidden" name='token'>`;
+          const tokenObj = `<input value=${token} type="hidden" name='card_token'>`;
           renderDom.insertAdjacentHTML("beforeend", tokenObj);
 
           document.getElementById("card-number").removeAttribute("name");
