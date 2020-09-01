@@ -1,4 +1,4 @@
-<%# cssはitems/searchを流用 %>
+<%# cssはitems/searchを流用+card.css %>
 <% breadcrumb :mypage, current_user %>
 <%= render "shared/second-header"%>
 <div class="wrapper">
@@ -25,28 +25,53 @@
       <%= f.label :last_name_kana, class: 'label' %>
       <br>
       <%= f.text_field :last_name_kana, class: 'field', disabled: 'disabled' %>
-      <br><br>
+      <br>
       <%= f.submit "変更する", class: 'submit-btn' %>
     <% end %>
     <% if defined? @card %>
-      <div class="Card__title">
-        <h2>カード情報<h2>
+    <%# カード %>
+    <div class="card-master">
+      <div class = "card-image">
+        <div class = "card-image-header">
+          <div class = "card-image-name">
+            TECH
+          </div>
+          <div class = "card-image-option">
+            CAMP
+          </div>
+        </div>
+        <div class = "card-image-number">
+          <%= "**** **** **** " + @card[:last4] %>
+        </div>
+        <div class = "card-image-exp">
+          <div class = "card-image-exp-list">
+              GOOD<br>
+              THRU<br>
+              有効期限
+          </div>
+          <div>
+            <div class = "card-image-exp-list">
+                month / year<br>
+                月 年
+            </div>
+            <div class="card-image-exp-main">
+              <%= @card[:exp_month] %>/<%= @card[:exp_year] % 100 %>
+            </div>
+          </div>
+        </div>
+        <div class = "card-image-footer">
+          <div class = "card-image-user">
+            <%= "#{current_user.first_name_kana} #{current_user.last_name_kana}" %>
+          </div>
+          <div class = "card-image-brand">
+            DIV
+          </div>
+        </div>
       </div>
-      <div class="Card_info">
-        【カード番号】
-        <br>
-        <%= "**** **** **** " + @card[:last4] %>
-        <%# カード番号の下4桁を取得 %>
-
-        <br>
-        【有効期限】
-        <br>
-        <%= @card[:exp_month] %>
-        <%# 有効期限の「月」を取得 %>
-        /
-        <%= @card[:exp_year] %>
-        <%# 有効期限の「年」を取得 %>
-      </div>
+    </div>
+    <%# /カード %>
+    <% else %>
+      <%= link_to "カード登録", cards_new_path, class: "card-new-btn submit-btn" %>
     <% end %>
   </div>
 

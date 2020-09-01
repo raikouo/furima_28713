@@ -50,7 +50,7 @@
   background-color: #3ccace;
   border:1px solid #3ccace;
   color:#fff;
-  margin:5px 25px;
+  margin:10px 25px;
   box-shadow: 0px 3px #cccccc;
 }
 .submit-btn:active {
@@ -58,7 +58,10 @@
   position: relative;
   top: 3px;
 }
-
+.card-new-btn{
+  display:block;
+  text-align:center;
+}
 /* 商品一覧 */
 .search_item-contents {
   width: calc(100% - 250px);
