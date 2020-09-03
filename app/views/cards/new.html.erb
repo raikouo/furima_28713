@@ -1,0 +1,62 @@
+<%= render "shared/second-header"%>
+<div class="new-card-container">
+<%= form_with  url: cards_path, id: 'charge-form', class: 'card-form',local: true do |f| %>
+
+  <%= f.label :number, "カード番号：", class:"new-card-label" %><br>
+  <%= f.text_field :number, class:"card-number new-card-number", placeholder:"Card Number", maxlength:"16" %>
+  <br>
+  <%= f.label :cvc ,"CVC：", class:"new-card-label" %><br>
+  <%= f.text_field :cvc, class:"card-cvc new-card-cvc", placeholder:"CVC", maxlength:"4" %>
+  <br>
+  <span class="new-card-label">有効期限：</span><br>
+
+  <%= f.select :exp_month, 1..12, {include_blank: "---"}, class: "card-exp-month new-card-exp" %>
+  <span class="new-card-label">月</span>
+  <%= f.select :exp_year, 20..25, {include_blank: "---"}, class: "card-exp-year new-card-exp" %>
+  <span class="new-card-label">年</span>
+  <br>
+  <%= f.submit "登録する" , class:"button new-card-submit-btn" %>
+<% end %>
+<%# カード %>
+<div class="card-master">
+  <div class = "card-image">
+    <div class = "card-image-header">
+      <div class = "card-image-name">
+        TECH
+      </div>
+      <div class = "card-image-option">
+        CAMP
+      </div>
+    </div>
+    <div class = "new-card-image-number" id = "new-card-image-number">
+      <%= "**** **** **** ****" %>
+    </div>
+    <div class = "card-image-exp">
+      <div class = "card-image-exp-list">
+          GOOD<br>
+          THRU<br>
+          有効期限
+      </div>
+      <div>
+        <div class = "card-image-exp-list">
+            month / year<br>
+            月 年
+        </div>
+        <div class="card-image-exp-main">
+          <span id = "card-exp-month">01</span>/<span id = "card-exp-year">01</span>
+        </div>
+      </div>
+    </div>
+    <div class = "card-image-footer">
+      <div class = "card-image-user">
+        <%= "#{current_user.first_name_kana} #{current_user.last_name_kana}" %>
+      </div>
+      <div class = "card-image-brand">
+        DIV
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<%# /カード %>
+<%= render "shared/second-footer"%>

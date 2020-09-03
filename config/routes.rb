@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  get 'cards/new'
+  get 'users/show'
   devise_for :users
   root "items#index"
+  resources :users, only: [:show, :update]
+  resources :cards, only: [:new, :create]
   resources :items do
     resources :transactions,  only: [:index, :create]
     resources :comments, only: :create

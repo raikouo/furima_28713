@@ -1,0 +1,84 @@
+.card-master{
+    padding:0 5px;
+}
+
+.card-image{
+    border-radius: 5px;
+    border:1px solid gold;
+    width:240px;
+    font-size:12px;
+    padding:5px;
+    margin-left:5px;
+    background: linear-gradient(-135deg, gold, white);
+    display: table-cell;    
+    vertical-align: middle;
+    box-shadow: 2px 2px 1px 1px silver;
+}
+
+.card-image-header{
+    border-top:1px dashed #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    letter-spacing: 0.5em;
+    height:30px;
+    color:white;
+}
+.card-image-name{
+    text-shadow: 2px 2px 4px black;
+}
+
+.card-image-option{
+    text-shadow: 2px 2px 4px black;
+}
+
+.card-image-number{
+    text-align:center;
+    font-size:12px;
+    letter-spacing: 0.5em;
+}
+
+.card-image-exp-list{
+    transform:scale(0.7);
+}
+
+.card-image-exp-date{
+    text-align:left;
+}
+
+
+.card-image-exp{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size:10px;
+}
+
+.card-image-exp-main{
+    font-size:16px;
+    letter-spacing: 0.5em;
+}
+
+.card-image-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px dashed #000;
+    letter-spacing: 0.5em;
+}
+
+.card-image-user{
+    width:180px;
+    font-size:12px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-image-brand{
+    color:white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.card-image-brand-image{
+    width: 50px;
+}
