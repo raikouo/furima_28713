@@ -1,7 +1,9 @@
 <%= render "shared/second-header"%>
 <div class="new-card-container">
 <%= form_with  url: cards_path, id: 'charge-form', class: 'card-form',local: true do |f| %>
-
+  <%# テスト用 %>
+  <span style="font-size:12px;color:#666666;">動作確認用：<br>No: 4242424242424242<br>期限: 未来の日付<br>セキュリティコード: 123<br></span>
+  <%# /テスト用 %>
   <%= f.label :number, "カード番号：", class:"new-card-label" %><br>
   <%= f.text_field :number, class:"card-number new-card-number", placeholder:"Card Number", maxlength:"16" %>
   <br>

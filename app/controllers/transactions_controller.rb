@@ -4,6 +4,11 @@ class TransactionsController < ApplicationController
   before_action :move_to_index
 
   def index
+    if Address.find_by(user: current_user[:id]).present?
+      @address = Address.find_by(user: current_user[:id])
+    else
+      @address = Address.new
+    end
     @order = Order.new
   end
 
