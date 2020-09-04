@@ -16,7 +16,6 @@
 }
 
 .card-image-header{
-    border-top:1px dashed #000;
     display: flex;
     justify-content: space-between;
     align-items: top;
@@ -63,7 +62,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom:1px dashed #000;
     letter-spacing: 0.5em;
 }
 

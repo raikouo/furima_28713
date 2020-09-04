@@ -61,7 +61,7 @@
         </div>
         <div class = "card-image-footer">
           <div class = "card-image-user">
-            <%= "#{current_user.first_name_kana} #{current_user.last_name_kana}" %>
+            <%= "#{current_user.last_name_kana} #{current_user.first_name_kana}" %>
           </div>
           <div class = "card-image-brand">
             <%= image_tag "card-#{@card.brand.downcase}.gif", class: "card-image-brand-image", alt: "" %>

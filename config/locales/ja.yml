@@ -45,6 +45,14 @@ ja:
         shipping_date_id: 発送までの日数
         prefecture_id: 発送元の地域
         category_id: カテゴリー
+      address:
+        tel: 電話番号
+        postal_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市区町村
+        address: 番地
+        building_name: 建物名
+        
   activemodel:
     attributes:
       trade_order:
