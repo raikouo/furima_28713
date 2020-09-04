@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :trades
   has_many :comments
   has_one  :card, dependent: :destroy
+  has_one  :address, dependent: :destroy
   
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   USER_NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/.freeze
