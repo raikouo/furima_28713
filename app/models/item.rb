@@ -9,7 +9,9 @@ class Item < ApplicationRecord
   has_one_attached :image
   has_one :trade
   has_many :comments, dependent: :destroy
-
+  has_many :item_tag_relations, dependent: :destroy
+  has_many :tags, through: :item_tag_relations
+  
   with_options presence: true do
     validates :name, length: { maximum: 40 }
     validates :explain, length: { maximum: 1000 }

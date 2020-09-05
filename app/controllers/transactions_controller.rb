@@ -2,13 +2,9 @@ class TransactionsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item
   before_action :move_to_index
+  before_action :set_address
 
   def index
-    if Address.find_by(user: current_user[:id]).present?
-      @address = Address.find_by(user: current_user[:id])
-    else
-      @address = Address.new
-    end
     @order = Order.new
   end
 
@@ -40,6 +36,14 @@ class TransactionsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def set_address
+    if Address.find_by(user: current_user[:id]).present?
+      @address = Address.find_by(user: current_user[:id])
+    else
+      @address = Address.new
+    end
   end
 
   def move_to_index
