@@ -48,6 +48,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def tag_search
+    return nil if params[:input] == ""
+    tag = Tag.where(['tag_name LIKE ?', "#{params[:input]}%"] ).order(created_at: 'DESC').limit(5)
+    render json:{ keyword: tag }
+  end
+  
   def search
     @results = @p.result.order(id: 'DESC')
     @items = Item.all
