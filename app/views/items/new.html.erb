@@ -43,6 +43,14 @@
         </div>
         <%= f.text_area :explain, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
       </div>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          タグ
+          <span class="form-any">任意</span>
+        </div>
+        <%= f.text_area :tag_name, class:"items-text", id:"tag-name", placeholder:"タグを入力して下さい（10文字まで）例）#ヘルメス、#ウニクロなど", maxlength:"11" %>
+      </div>
+      <div id="search-result"></div>
     </div>
     <%# /商品名と商品説明 %>
 

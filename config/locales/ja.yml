@@ -56,6 +56,7 @@ ja:
   activemodel:
     attributes:
       trade_order:
+        card_token: カード情報
         token: カード情報
         tel: 電話番号
         postal_code: 郵便番号
@@ -63,3 +64,14 @@ ja:
         city: 市区町村
         address: 番地
         building_name: 建物名
+      items_tag:
+        name: 商品名
+        explain: 商品の説明
+        price: 価格
+        image: 出品画像
+        status_id: 商品の状態
+        postage_id: 配送料の負担
+        shipping_date_id: 発送までの日数
+        prefecture_id: 発送元の地域
+        category_id: カテゴリー
+        tag_name: タグ
