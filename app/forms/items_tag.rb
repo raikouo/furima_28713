@@ -9,7 +9,7 @@ class ItemsTag
     validates :image
   end
 
-  validates :tag_name, format: {with: /\A\#.{1,10}\z/, message: 'は #◯◯◯の形で10文字以内で入力して下さい', allow_blank: true}
+  validates :tag_name, format: { with: /\A\#.{1,10}\z/, message: 'は #◯◯◯の形で10文字以内で入力して下さい', allow_blank: true }
 
   with_options numericality: { other_than: 1, message: 'を選択して下さい' } do
     validates :status_id
@@ -22,22 +22,21 @@ class ItemsTag
   def save
     item = Item.create(
       name: name,
-       explain: explain,
-       price: price,
-       image: image,
-       status_id: status_id,
-       postage_id: postage_id,
-       shipping_date_id: shipping_date_id,
-       prefecture_id: prefecture_id,
-       category_id: category_id,
-       user_id: user_id
+      explain: explain,
+      price: price,
+      image: image,
+      status_id: status_id,
+      postage_id: postage_id,
+      shipping_date_id: shipping_date_id,
+      prefecture_id: prefecture_id,
+      category_id: category_id,
+      user_id: user_id
     )
-    if tag_name != ""
+    if tag_name != ''
       tag = Tag.where(tag_name: tag_name).first_or_initialize
       tag.save
 
-      ItemTagRelation.create(item_id:item.id, tag_id: tag.id)
+      ItemTagRelation.create(item_id: item.id, tag_id: tag.id)
     end
   end
-
 end

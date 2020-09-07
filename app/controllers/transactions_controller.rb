@@ -39,11 +39,11 @@ class TransactionsController < ApplicationController
   end
 
   def set_address
-    if Address.find_by(user: current_user[:id]).present?
-      @address = Address.find_by(user: current_user[:id])
-    else
-      @address = Address.new
-    end
+    @address = if Address.find_by(user: current_user[:id]).present?
+                 Address.find_by(user: current_user[:id])
+               else
+                 Address.new
+               end
   end
 
   def move_to_index
